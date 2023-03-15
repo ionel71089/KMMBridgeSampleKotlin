@@ -34,6 +34,6 @@ kmmbridge {
     mavenPublishArtifacts()
     githubReleaseVersions()
     spm()
-    cocoapods("git@github.com:touchlab/PublicPodspecs.git")
+    cocoapods("git@github.com:ionel71089/PublicPodspecs.git")
     versionPrefix.set("0.8")
 }
