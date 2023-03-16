@@ -6,4 +6,3 @@ jobs:
     uses: touchlab/KMMBridgeGithubWorkflow/.github/workflows/faktorybuildbranches.yml@v0.8
     secrets:
       PODSPEC_SSH_KEY: ${{ secrets.PODSPEC_SSH_KEY }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
