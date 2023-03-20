@@ -35,5 +35,5 @@ kmmbridge {
     githubReleaseVersions()
     spm()
     cocoapods("git@github.com:ionel71089/PublicPodspecs.git")
-    versionPrefix.set("0.8.5-alpha.")
+    versionPrefix.set("0.8")
 }
