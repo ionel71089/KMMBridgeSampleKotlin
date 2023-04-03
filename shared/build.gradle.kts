@@ -11,11 +11,19 @@ kotlin {
     android()
     ios()
     // Note: iosSimulatorArm64 target requires that all dependencies have M1 support
-    iosSimulatorArm64()
+//    iosSimulatorArm64()
     cocoapods {
         summary = "KMMBridgeSampleKotlin"
         homepage = "https://touchlab.dev"
         ios.deploymentTarget = "13"
+    }
+
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation("com.suparnatural.kotlin:fs:1.1.0")
+            }
+        }
     }
 }
 
