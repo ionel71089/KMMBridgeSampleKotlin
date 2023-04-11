@@ -1,29 +1,43 @@
+val ktorVersion = "2.2.4"
+
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("co.touchlab.faktory.kmmbridge") version "0.3.4"
-    `maven-publish`
+    kotlin("plugin.serialization") version "1.8.20"
+
     kotlin("native.cocoapods")
+    id("co.touchlab.faktory.kmmbridge") version "0.3.7"
+    `maven-publish`
 }
 
 version = "0.1"
 kotlin {
     android()
-    ios()
-    // Note: iosSimulatorArm64 target requires that all dependencies have M1 support
-    iosSimulatorArm64()
-    cocoapods {
-        summary = "KMMBridgeSampleKotlin"
-        homepage = "https://touchlab.dev"
-        ios.deploymentTarget = "13"
-    }
 
     sourceSets {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+                implementation("io.ktor:ktor-client-core:$ktorVersion")
+                implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
             }
         }
+
+        val iosMain by creating {
+            dependsOn(commonMain)
+            dependencies {
+                implementation("io.ktor:ktor-client-darwin:$ktorVersion")
+            }
+        }
+    }
+
+    ios()
+    iosSimulatorArm64()
+    cocoapods {
+        summary = "KMMBridgeSampleKotlin"
+        homepage = "https://touchlab.dev"
+        ios.deploymentTarget = "13"
     }
 }
 
