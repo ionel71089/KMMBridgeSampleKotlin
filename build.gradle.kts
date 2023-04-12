@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.7.10" apply false
+    kotlin("multiplatform") version "1.7.20" apply false
     id("com.android.library") version "7.4.2" apply false
 }
 
