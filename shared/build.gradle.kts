@@ -1,4 +1,4 @@
-val ktorVersion = "2.2.2"
+val ktorVersion = "2.2.4"
 
 plugins {
     kotlin("multiplatform")
@@ -33,7 +33,7 @@ kotlin {
     }
 
     ios()
-//    iosSimulatorArm64()
+    iosSimulatorArm64()
     cocoapods {
         summary = "KMMBridgeSampleKotlin"
         homepage = "https://touchlab.dev"
