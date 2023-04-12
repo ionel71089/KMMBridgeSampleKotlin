@@ -33,7 +33,7 @@ kotlin {
     }
 
     ios()
-    iosSimulatorArm64()
+//    iosSimulatorArm64()
     cocoapods {
         summary = "KMMBridgeSampleKotlin"
         homepage = "https://touchlab.dev"
